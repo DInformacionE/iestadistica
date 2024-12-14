@@ -1,0 +1,133 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="images/LOGO_CDMX.png" width="300" height="180" >
+</div>
+
+</body>
+
+<body>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="#" onclick="showTab('acerca')">Acerca de</a>
+        <a href="#" onclick="showTab('informacion')">Información</a>
+        <a href="#" onclick="showTab('descarga')">Descarga</a>
+    </nav>
+
+    <!-- Contenido -->
+    <div class="content">
+        <div id="acerca" class="tab-content active">
+            <h2>
+
+<iframe title="reporte_de_sismo" width="1000" height="873.5" src="https://app.powerbi.com/view?r=eyJrIjoiNmIyNGI1NzMtMDIxMC00MjQ5LWI2MzAtMzhhNTlkODI1ZjcwIiwidCI6ImY0ZjdhY2E5LWI0MWYtNDYyYS1hOTJlLWFlMmNiZGM2YmFmMyJ9" frameborder="0" allowFullScreen="true"></iframe>
+            </h2>
+            <p>
+
+
+
+            Este es un proyecto de ejemplo para demostrar cómo crear una página con pestañas utilizando HTML, CSS y JavaScript.</p>
+        
+
+        </div>
+        
+        <div id="informacion" class="tab-content">
+            <h2>Información</h2>
+            <p>Aquí encontrarás información importante sobre cómo usar este sitio web y sus funcionalidades.
+<iframe title="reporte_de_sismo" width="1140" height="541.25" src="https://app.powerbi.com/view?r=eyJrIjoiNmIyNGI1NzMtMDIxMC00MjQ5LWI2MzAtMzhhNTlkODI1ZjcwIiwidCI6ImY0ZjdhY2E5LWI0MWYtNDYyYS1hOTJlLWFlMmNiZGM2YmFmMyJ9" frameborder="0" allowFullScreen="true"></iframe>
+            </p>
+        </div>
+
+        <div id="descarga" class="tab-content">
+            <h2>Descarga</h2>
+            <p>Descarga los archivos necesarios desde aquí: <a href="#">Enlace de descarga</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Función para cambiar entre pestañas
+        function showTab(tabId) {
+            // Ocultar todas las pestañas
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            
+            // Mostrar la pestaña seleccionada
+            var selectedTab = document.getElementById(tabId);
+            selectedTab.classList.add('active');
+        }
+    </script>
+
+ <script>
+        function loadHTML() {
+            // Usar fetch para cargar el archivo HTML
+            fetch('acerca.html')
+                .then(response => response.text())
+                .then(data => {
+                    // Inserta el acerca del archivo dentro del div
+                    document.getElementById('acerca').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error al cargar el archivo:', error);
+                    document.getElementById('acerca').innerHTML = '<p>Error al cargar el acerca.</p>';
+                });
+        }
+    </script>
+
+</body>
+    
+</html>
+
+
